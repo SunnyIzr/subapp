@@ -1,0 +1,86 @@
+SubApp Specs
+
+SubApp MVP:
+
+Views:
+
+SubDB Input
+	- Takes in SubId
+SubDB SubInfo
+	- Displays Chargify Data
+  - Displays SubDB Prefs
+  - Displays SubDB Order History
+  - Allows for SubDB Prefs Changes
+  - Allows for SubDB Order History Additions
+
+NewSub Input
+  - Takes in SubID
+NewSub Summary
+  - Displays Chargify Data
+  - Displays Wufoo Prefs
+  - Displays Shopify Order History Based on email
+  - [Saves Wufoo Prefs to SubDB Prefs]
+  - [Saves Shopify Order History to SubDB Order History]
+NewSub Suggestions
+  - Runs SubRecommender(Based on ShopifyInv,Prefs,OrderHistory,SubPlan) => 15 Options
+  - Allows for user to choose styles based on options and Confirm
+  - Will Generate CSV based on selected styles ready for ShipStation Upload
+  - [Updates SubDB Order History based on selected styles]
+  - [Updates Shopify Inventory based on selected styles]
+
+RecurSub Input
+  - Displays last upload date
+  - Takes in date range to prepare subs outstanding
+RecurSub Summary
+  - Displays live subs due within date range excl fulfilled subs
+RecurSub PopulatedSummary
+  - Displays live subs along with SubRecommendations (Based on ShopifyInv,Prefs,OH,SubPlan)
+  - Allows for user to change style numbers for each Sub and Confirm
+  - Will Generate CSV based on selected styles ready for ShipStation Upload
+  - [Updates SubDB Order History based on selected styles]
+  - [Updates Shopify Inventory based on selected styles]
+		
+
+
+Branches:
+
+Phase 1 Requirements: None
+SubDB (Testing: 2970457)
+- Retrieve Chargify Data in SubDB Views
+- Build SubDB with Prefs Table & Seed with Test Data
+- Retrieve Prefs in SubDB Views
+- Add Order History Table to SubDB & Seed with Test Data
+- Retrieve Order History in SubDB View
+- Allow for Prefs/OH Changes
+
+Phase 2 Requirements: SubDB w/ Test Data
+NewSub: (Testing:)
+- Display Chargify Data
+- Retrieves Wufoo Prefs
+- Retrieves Existing Shopify Order History
+- Allows for user to save OH/Prefs to SubDB
+NewSubRec:
+- **Create 15 Recommendations for Styles
+- Allow for User to alter styles
+- Generates SS CSV File
+- Updates OH SubDB
+- [Updates Shopify] 
+
+Phase 3 Requirements: SubDB w/ Seeded Data
+RecurSub Summary
+- Displays live subs due within date range
+- Displays live subs due within date range excl fulfilled subs
+RecurSub Populated Summary
+- **Creates Recommendations for all live subs
+- Allow for user to change styles for any Sub
+- Generate SS CSV File once Confirmed
+- Updates OH SubDB
+- [Updates Shopify Inv]
+*[Final Features]
+
+
+
+
+
+
+
