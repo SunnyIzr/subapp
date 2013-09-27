@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+sample_id = 2970457
+
 describe 'Retrieves Accurate Subscriber Information' do
   include Rack::Test::Methods
 
@@ -7,12 +9,8 @@ describe 'Retrieves Accurate Subscriber Information' do
     Sinatra::Application
   end
 
-  it "says hello world" do
-    get '/'
-    expect(page).to have_body "Hello World"
-  end
-
   it "Retrieves accurate data from Chargify through API" do
+
     
   end
 
@@ -20,11 +18,24 @@ describe 'Retrieves Accurate Subscriber Information' do
    
   end
 
-  it "Retrieves accurate data from SubDB" do
+  it "Retrieves accurate preferences data from SubDB" do
   
   end
 
-   it "Retrieves accurate data from SubDB through interface" do
+   it "Retrieves accurate preferences data from SubDB through interface" do
+      pref_ary = Sub.find_by(csub_id: sample_id).prefs.map! {|pref_obj| pref_obj.pref}.sort!
+      p test_sub[:prefs].sort!
+
+      # exp(pref_ary).to eq(exp_prefs)
+
+    
+  end
+
+  it "Retrieves accurate order history data from SubDB" do
+  
+  end
+
+   it "Retrieves accurate order history data from SubDB through interface" do
     
   end
 

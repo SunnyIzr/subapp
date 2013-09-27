@@ -5,6 +5,7 @@ ruby "1.9.3"
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'rake'
+gem 'tux'
 
 group :development do
   gem 'shotgun'
